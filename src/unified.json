@@ -1,0 +1,856 @@
+{
+    "content": {
+        "100": {
+            "update_mode": null,
+            "detail_images": [
+                "wny1.jpg",
+                "wny2.jpg",
+                "wny3.jpg",
+                "wny4.jpg",
+                "wny5.jpg",
+                "wny6.jpg"
+            ],
+            "coming_soon_on": {
+                "webplayer": false,
+                "android_cardboard": false,
+                "ios": false,
+                "gearvr": false
+            },
+            "title": "NYT MAG VR: Walking New York",
+            "display_priority": 800,
+            "cameras": {
+                "default": {
+                    "gearvr": {
+                        "size": "580 MB",
+                        "file": "NYT_Android_TB_v2_h264_30fps.mp4",
+                        "format": "stereo_top_bottom"
+                    },
+                    "name": "default",
+                    "android_cardboard": {
+                        "4k": {
+                            "size": "580 MB",
+                            "mono_use_eye": "left",
+                            "file": "NYT_Android_TB_v2_h264_30fps.mp4",
+                            "format": "stereo_top_bottom"
+                        },
+                        "hd": {
+                            "size": "140 MB",
+                            "mono_use_eye": "left",
+                            "file": "NYT_Android1080p_TB_h264_30fps.mp4",
+                            "format": "stereo_top_bottom"
+                        }
+                    },
+                    "ios": {
+                        "ipad": {
+                            "size": "580 MB",
+                            "file": "NYT_Android_TB_v2_h264_30fps.mp4",
+                            "format": "mono"
+                        },
+                        "mono": {
+                            "size": "580 MB",
+                            "file": "NYT_Android_TB_v2_h264_30fps.mp4",
+                            "format": "mono_top_only"
+                        },
+                        "stereo": {
+                            "size": "580 MB",
+                            "file": "NYT_Android_TB_v2_h264_30fps.mp4",
+                            "format": "stereo_top_bottom"
+                        }
+                    },
+                    "audio_files": [
+                        "NYT_000.mp3",
+                        "NYT_090.mp3",
+                        "NYT_180.mp3",
+                        "NYT_270.mp3"
+                    ],
+                    "webplayer": {
+                        "name": "nyt_walking-v3",
+                        "audio_formats": {
+                            "none": true,
+                            "baked": true,
+                            "binaural": true
+                        },
+                        "format": "stereo_top_bottom",
+                        "resolutions": [
+                            "4k",
+                            "1080",
+                            "720",
+                            "480"
+                        ],
+                        "available_formats": {
+                            "mono": true,
+                            "stereo": true
+                        },
+                        "types": [
+                            "mp4",
+                            "webm"
+                        ]
+                    }
+                }
+            },
+            "visible_on": {
+                "webplayer": true,
+                "android_cardboard": true,
+                "ios": true,
+                "gearvr": true
+            },
+            "id": 100,
+            "splash": {
+                "ios": "NYT750x1334_v1.jpg"
+            },
+            "author": "JR + Chris Milk + Zach Richter",
+            "directors": ["JR", "Chris Milk", "Zach Richter"],
+            "release_date": 2015,
+            "is_live_streaming": false,
+            "duration": "08:48",
+            "root": "100-NYT_WALKING/",
+            "thumbnail": {
+                "android_cardboard": "nyt3_1024x512.jpg",
+                "ios": "NYT_b1024x512.jpg",
+                "gearvr": "nyt_512.png"
+            },
+            "description": "Vrse and the New York Times come together to capture the birth of a new large-scale street art installation in New York. Renowned French artist JR, famous for posting massive photographs in urban environments, attempts to create a poetic awareness of New York's storied history as a city of immigrants. The monumental portrait was conceived as a cover for the NYT's Walking New York issue."
+        },
+        "6": {
+            "update_mode": null,
+            "detail_images": [],
+            "coming_soon_on": {
+                "webplayer": false,
+                "android_cardboard": false,
+                "ios": false,
+                "gearvr": false
+            },
+            "title": "EVOLUTION of Verse",
+            "display_priority": 700,
+            "cameras": {
+                "default": {
+                    "gearvr": {
+                        "size": "560 MB",
+                        "file": "EV0010_comp_v157_credits_sbs_3840x2160_20mbps_MOS.mp4",
+                        "format": "stereo_left_right"
+                    },
+                    "name": "default",
+                    "android_cardboard": {
+                        "4k": {
+                            "size": "560 MB",
+                            "mono_use_eye": "left",
+                            "file": "EV0010_comp_v157_credits_sbs_3840x2160_20mbps_MOS.mp4",
+                            "format": "stereo_left_right"
+                        },
+                        "hd": {
+                            "size": "145 MB",
+                            "mono_use_eye": "left",
+                            "file": "EV0010_comp_v157_credits_sbs_1920x1080_q2.mp4",
+                            "format": "stereo_left_right"
+                        }
+                    },
+                    "ios": {
+                        "ipad": {
+                            "size": "570 MB",
+                            "file": "EV0010_comp_v157_credits_sbs_4096x2048_ProRes_MOS_h264_30fps_3840x2160_crf_23.mp4",
+                            "format": "mono"
+                        },
+                        "mono": {
+                            "size": "350 MB",
+                            "file": "EV0010_comp_v157_credits_sbs-DVLABS-2D-1880x1440_HQ.mp4",
+                            "format": "mono"
+                        },
+                        "stereo": {
+                            "size": "570 MB",
+                            "file": "EV0010_comp_v157_credits_sbs_4096x2048_ProRes_MOS_h264_30fps_3840x2160_crf_23.mp4",
+                            "format": "stereo_left_right"
+                        }
+                    },
+                    "audio_files": [
+                        "EVOL_Audio_000.mp3",
+                        "EVOL_Audio_090.mp3",
+                        "EVOL_Audio_180.mp3",
+                        "EVOL_Audio_270.mp3"
+                    ],
+                    "webplayer": {
+                        "name": "evol-v158",
+                        "audio_formats": {
+                            "none": true,
+                            "baked": true,
+                            "binaural": true
+                        },
+                        "format": "stereo_left_right",
+                        "resolutions": [
+                            "4k",
+                            "1080",
+                            "720",
+                            "480"
+                        ],
+                        "available_formats": {
+                            "mono": true,
+                            "stereo": true
+                        },
+                        "types": [
+                            "mp4",
+                            "webm"
+                        ]
+                    }
+                }
+            },
+            "visible_on": {
+                "webplayer": true,
+                "android_cardboard": true,
+                "ios": true,
+                "gearvr": true
+            },
+            "id": 6,
+            "splash": {},
+            "author": "Creator: Chris Milk",
+            "directors": ["Chris Milk"],
+            "release_date": 2015,
+            "is_live_streaming": false,
+            "duration": "03:57",
+            "root": "6-EVOL/",
+            "thumbnail": {
+                "android_cardboard": "evol_1024.jpg",
+                "ios": "evol_1024.jpg",
+                "gearvr": "evol_512.png"
+            },
+            "description": "A photo-realistic CGI-rendered 3D Virtual Reality film that takes the viewer on a journey from one beginning to a new beginning."
+        },
+        "71": {
+            "update_mode": null,
+            "detail_images": [],
+            "coming_soon_on": {
+                "webplayer": false,
+                "android_cardboard": false,
+                "ios": false,
+                "gearvr": false
+            },
+            "title": "SNL 40 \"Camera One\" - Seinfeld Q&A",
+            "display_priority": 500,
+            "cameras": {
+                "default": {
+                    "gearvr": {
+                        "size": "345 MB",
+                        "file": "SNL_v02_Stereo_MOS_DVLABS-4096x2048_QUICK-B.mp4",
+                        "format": "stereo_top_bottom"
+                    },
+                    "name": "default",
+                    "android_cardboard": {
+                        "4k": {
+                            "size": "330 MB",
+                            "mono_use_eye": "left",
+                            "file": "SNL_v02_Stereo_MOS_DVLABS-3840x2160-QUICK_orig_test.mp4",
+                            "format": "stereo_top_bottom"
+                        },
+                        "hd": {
+                            "size": "230 MB",
+                            "mono_use_eye": "left",
+                            "file": "SNL_v02_Stereo_MOS_DVLABS-1920x1080_QUICK-B.mp4",
+                            "format": "stereo_top_bottom"
+                        }
+                    },
+                    "ios": {
+                        "ipad": {
+                            "size": "800 MB",
+                            "file": "SNL_v02_Stereo_MOS_ProRes.mov_h264_29.97fps_3840x2160_crf_21.mp4",
+                            "format": "mono_top_only"
+                        },
+                        "mono": {
+                            "size": "800 MB",
+                            "file": "SNL_v02_Stereo_MOS_ProRes.mov_h264_29.97fps_3840x2160_crf_21.mp4",
+                            "format": "mono_top_only"
+                        },
+                        "stereo": {
+                            "size": "800 MB",
+                            "file": "SNL_v02_Stereo_MOS_ProRes.mov_h264_29.97fps_3840x2160_crf_21.mp4",
+                            "format": "stereo_top_bottom"
+                        }
+                    },
+                    "audio_files": [
+                        "SNL_Seinfeld_v7_000.mp3",
+                        "SNL_Seinfeld_v7_090.mp3",
+                        "SNL_Seinfeld_v7_180.mp3",
+                        "SNL_Seinfeld_v7_270.mp3"
+                    ],
+                    "webplayer": {
+                        "name": "snl-v2",
+                        "audio_formats": {
+                            "none": true,
+                            "baked": true,
+                            "binaural": true
+                        },
+                        "format": "stereo_top_bottom",
+                        "resolutions": [
+                            "4k",
+                            "1080",
+                            "720",
+                            "480"
+                        ],
+                        "available_formats": {
+                            "mono": true,
+                            "stereo": true
+                        },
+                        "types": [
+                            "mp4",
+                            "webm"
+                        ]
+                    }
+                }
+            },
+            "visible_on": {
+                "webplayer": true,
+                "android_cardboard": true,
+                "ios": true,
+                "gearvr": true
+            },
+            "id": 71,
+            "splash": {},
+            "author": "Creators: SNL + Chris Milk",
+            "directors": ["SNL", "Chris Milk"],
+            "release_date": 2015,
+            "is_live_streaming": false,
+            "duration": "08:02",
+            "root": "71-SNL/",
+            "thumbnail": {
+                "android_cardboard": "SNL.jpg",
+                "ios": "SNLOptimized.jpg",
+                "gearvr": "snl_512.png"
+            },
+            "description": "Saturday Night Live celebrates 40 years in this star-studded live special, featuring appearances by current and former cast members, past hosts, and guest stars. In this clip Jerry Seinfeld hosts a Q&A with some surprise audience members. We see the show unfold from the top of camera #1, operated by Johnny Pinto, who also taped the first SNL episode, and the forty years of episodes that followed."
+        },
+        "81": {
+            "update_mode": null,
+            "detail_images": [],
+            "coming_soon_on": {
+                "webplayer": false,
+                "android_cardboard": false,
+                "ios": false,
+                "gearvr": false
+            },
+            "title": "SNL 40 \"Camera One\" - Celebrity Jeopardy",
+            "display_priority": 400,
+            "cameras": {
+                "default": {
+                    "gearvr": {
+                        "size": "600 MB",
+                        "file": "JEOPARDY_MOS.mp4",
+                        "format": "mono"
+                    },
+                    "name": "default",
+                    "android_cardboard": {
+                        "4k": {
+                            "size": "600 MB",
+                            "mono_use_eye": "left",
+                            "file": "JEOPARDY_MOS.mp4",
+                            "format": "mono"
+                        },
+                        "hd": {
+                            "size": "125 MB",
+                            "mono_use_eye": "left",
+                            "file": "SNL40_JEOPARDY_Bumper_Credits_h264_30fps_MOS_cardboard1080p_h264_30fps.mp4",
+                            "format": "mono"
+                        }
+                    },
+                    "ios": {
+                        "ipad": {
+                            "size": "265 MB",
+                            "file": "iOS2880_iOS2880_h264_30fps.mp4",
+                            "format": "mono"
+                        },
+                        "mono": {
+                            "size": "265 MB",
+                            "file": "iOS2880_iOS2880_h264_30fps.mp4",
+                            "format": "mono"
+                        },
+                        "stereo": {
+                            "size": "265 MB",
+                            "file": "iOS2880_iOS2880_h264_30fps.mp4",
+                            "format": "mono"
+                        }
+                    },
+                    "audio_files": [
+                        "Jeopardy_000.mp3",
+                        "Jeopardy_090.mp3",
+                        "Jeopardy_180.mp3",
+                        "Jeopardy_270.mp3"
+                    ],
+                    "webplayer": null
+                }
+            },
+            "visible_on": {
+                "webplayer": false,
+                "android_cardboard": true,
+                "ios": true,
+                "gearvr": true
+            },
+            "id": 81,
+            "splash": {},
+            "author": "Creators: SNL + Chris Milk",
+            "directors": ["SNL", "Chris Milk"],
+            "release_date": 2015,
+            "is_live_streaming": false,
+            "duration": "09:24",
+            "root": "81-SNL_JEOPARDY/",
+            "thumbnail": {
+                "android_cardboard": "JEOPARDY2_WIDE_iOS1024x512_compressed65.jpg",
+                "ios": "JEOPARDY2_WIDE_iOS1024x512_compressed65.jpg",
+                "gearvr": "snl_jeopardy_512.png"
+            },
+            "description": "Saturday Night Live celebrates 40 years in this star-studded live special, featuring appearances by current and former cast members, past hosts, and guest stars. In this clip, Will Ferrell returns to host one of the show's most lauded sketches: Celebrity Jeopardy. Featured appearances include current cast members Kate McKinnon and Kenan Thompson, as well as SNL hall-of-famers Darrell Hammond, Alec Baldwin, Norm Macdonald, and Jim Carrey."
+        },
+        "51": {
+            "update_mode": null,
+            "detail_images": [],
+            "coming_soon_on": {
+                "webplayer": false,
+                "android_cardboard": false,
+                "ios": false,
+                "gearvr": false
+            },
+            "title": "Catatonic Trailer",
+            "display_priority": 100,
+            "cameras": {
+                "default": {
+                    "gearvr": {
+                        "size": "270 MB",
+                        "file": "Catatonic_dvlabs_final_2015-03-16-DVLABS-2048x2048.mp4",
+                        "format": "stereo_top_bottom"
+                    },
+                    "name": "default",
+                    "android_cardboard": {},
+                    "ios": {},
+                    "audio_files": [
+                        "Catatonic_000.mp3",
+                        "Catatonic_090.mp3",
+                        "Catatonic_180.mp3",
+                        "Catatonic_270.mp3"
+                    ],
+                    "webplayer": {
+                        "name": "cata_trailer-v1",
+                        "audio_formats": {
+                            "none": true,
+                            "baked": true,
+                            "binaural": true
+                        },
+                        "format": "stereo_top_bottom",
+                        "resolutions": [
+                            "4k",
+                            "1080",
+                            "720",
+                            "480"
+                        ],
+                        "available_formats": {
+                            "mono": true,
+                            "stereo": true
+                        },
+                        "types": [
+                            "mp4",
+                            "webm"
+                        ]
+                    }
+                }
+            },
+            "visible_on": {
+                "webplayer": true,
+                "android_cardboard": false,
+                "ios": false,
+                "gearvr": true
+            },
+            "id": 51,
+            "splash": {},
+            "author": "Creator: Guy Shelmerdine",
+            "directors": ["Guy Shelmerdine"],
+            "release_date": 2015,
+            "rating": "VR-R",
+            "is_live_streaming": false,
+            "duration": "00:46",
+            "root": "51-CATATONIC/",
+            "thumbnail": {
+                "android_cardboard": "catatonic_1024.jpg",
+                "ios": "catatonic_1024.jpg",
+                "gearvr": "catatonic_512.png"
+            },
+            "description": "An immersive journey through an insane asylum in which the audience, bound to a wheelchair, undergoes a sensory-shocking horror experience."
+        },
+        "21": {
+            "update_mode": null,
+            "detail_images": [],
+            "coming_soon_on": {
+                "webplayer": false,
+                "android_cardboard": false,
+                "ios": false,
+                "gearvr": false
+            },
+            "title": "Clouds Over Sidra",
+            "display_priority": 200,
+            "cameras": {
+                "default": {
+                    "gearvr": {
+                        "size": "1 GB",
+                        "file": "UN_RC10_FINL2_Android_High_MOS.mp4",
+                        "format": "stereo_left_right"
+                    },
+                    "name": "default",
+                    "android_cardboard": {
+                        "4k": {
+                            "size": "1 GB",
+                            "mono_use_eye": "left",
+                            "file": "UN_RC10_FINL2_Android_High_MOS.mp4",
+                            "format": "stereo_left_right"
+                        },
+                        "hd": {
+                            "size": "1 GB",
+                            "mono_use_eye": "left",
+                            "file": "UN_RC10_FINL2_Android_Low_MOS.mp4",
+                            "format": "stereo_left_right"
+                        }
+                    },
+                    "ios": {
+                        "ipad": {
+                            "size": "680 MB",
+                            "file": "UN_V10_EXP6_ProRes.mov_h264_29.97fps_3840x2160_crf_23.mp4",
+                            "format": "mono_left_only"
+                        },
+                        "mono": {
+                            "size": "680 MB",
+                            "file": "UN_V10_EXP6_ProRes.mov_h264_29.97fps_3840x2160_crf_23.mp4",
+                            "format": "mono_left_only"
+                        },
+                        "stereo": {
+                            "size": "680 MB",
+                            "file": "UN_V10_EXP6_ProRes.mov_h264_29.97fps_3840x2160_crf_23.mp4",
+                            "format": "stereo_left_right"
+                        }
+                    },
+                    "audio_files": [
+                        "UN_000.mp3",
+                        "UN_090.mp3",
+                        "UN_180.mp3",
+                        "UN_270.mp3"
+                    ],
+                    "webplayer": {
+                        "name": "un-v9",
+                        "audio_formats": {
+                            "none": true,
+                            "baked": true,
+                            "binaural": true
+                        },
+                        "format": "stereo_left_right",
+                        "resolutions": [
+                            "4k",
+                            "1080",
+                            "720",
+                            "480"
+                        ],
+                        "available_formats": {
+                            "mono": true,
+                            "stereo": true
+                        },
+                        "types": [
+                            "mp4",
+                            "webm"
+                        ]
+                    }
+                }
+            },
+            "visible_on": {
+                "webplayer": true,
+                "android_cardboard": true,
+                "ios": true,
+                "gearvr": true
+            },
+            "id": 21,
+            "splash": {},
+            "author": "Creators : Gabo Arora + Chris Milk",
+            "directors": ["Gabo Arora", "Chris Milk"],
+            "release_date": 2015,
+            "is_live_streaming": false,
+            "duration": "08:08",
+            "root": "21-UN/",
+            "thumbnail": {
+                "android_cardboard": "un_1024.jpg",
+                "ios": "un_1024.jpg",
+                "gearvr": "un_512.png"
+            },
+            "description": "The Zaatari Refugee Camp is home to 130,000 Syrians fleeing violence and war. Children make up half the camp's population. This is the story of Sidra, a 12-year old girl who has spent the last 18 months in Zaatari."
+        },
+        "61": {
+            "update_mode": null,
+            "detail_images": [],
+            "coming_soon_on": {
+                "webplayer": false,
+                "android_cardboard": false,
+                "ios": false,
+                "gearvr": false
+            },
+            "title": "New Wave",
+            "display_priority": 100,
+            "cameras": {
+                "default": {
+                    "gearvr": {
+                        "size": "205 MB",
+                        "file": "NEW_WAVE_superhigh_v002-DVLABS-4096x2048_HQ.mp4",
+                        "format": "stereo_top_bottom"
+                    },
+                    "name": "default",
+                    "android_cardboard": {
+                        "4k": {
+                            "size": "195 MB",
+                            "mono_use_eye": "left",
+                            "file": "NEW_WAVE_superhigh_v002-DVLABS-3840x2160.mp4",
+                            "format": "stereo_top_bottom"
+                        },
+                        "hd": {
+                            "size": "45 MB",
+                            "mono_use_eye": "left",
+                            "file": "NEW_WAVE_superhigh_v002-DVLABS-1920x1080.mp4",
+                            "format": "stereo_top_bottom"
+                        }
+                    },
+                    "ios": {
+                        "ipad": {
+                            "size": "65 MB",
+                            "file": "NEW_WAVE_v002-DVLABS-L-1440x1024.mp4",
+                            "format": "mono"
+                        },
+                        "mono": {
+                            "size": "60 MB",
+                            "file": "NEW_WAVE_v002-DVLABS-2D-2880x1024.mp4",
+                            "format": "mono"
+                        },
+                        "stereo": {
+                            "size": "65 MB",
+                            "file": "NEW_WAVE_v002-DVLABS-L-1440x1024.mp4",
+                            "format": "stereo_left_right"
+                        }
+                    },
+                    "audio_files": [
+                        "New_Wave_v6_000.mp3",
+                        "New_Wave_v6_090.mp3",
+                        "New_Wave_v6_180.mp3",
+                        "New_Wave_v6_270_3.mp3"
+                    ],
+                    "webplayer": {
+                        "name": "new_wave-v2",
+                        "audio_formats": {
+                            "none": true,
+                            "baked": true,
+                            "binaural": true
+                        },
+                        "format": "stereo_top_bottom",
+                        "resolutions": [
+                            "4k",
+                            "1080",
+                            "720",
+                            "480"
+                        ],
+                        "available_formats": {
+                            "mono": true,
+                            "stereo": true
+                        },
+                        "types": [
+                            "mp4",
+                            "webm"
+                        ]
+                    }
+                }
+            },
+            "visible_on": {
+                "webplayer": false,
+                "android_cardboard": true,
+                "ios": true,
+                "gearvr": true
+            },
+            "id": 61,
+            "splash": {},
+            "author": "Creators: Samir Mallal and Aron Hjartarson",
+            "directors": ["Samir Mallal", "Aron Hjartarson"],
+            "release_date": 2015,
+            "is_live_streaming": false,
+            "duration": "02:18",
+            "root": "61-NEW_WAVE/",
+            "thumbnail": {
+                "android_cardboard": "new_wave_1024.jpg",
+                "ios": "new_wave_1024.jpg",
+                "gearvr": "new_wave_512.png"
+            },
+            "description": "A young woman tests her lover's affection at the beach."
+        },
+        "31": {
+            "update_mode": null,
+            "detail_images": [],
+            "coming_soon_on": {
+                "webplayer": false,
+                "android_cardboard": false,
+                "ios": false,
+                "gearvr": false
+            },
+            "title": "VICE NEWS VR : Millions March NYC 12.13.14",
+            "display_priority": 300,
+            "cameras": {
+                "default": {
+                    "gearvr": {
+                        "size": "1.1 GB",
+                        "file": "VICEVR_V6_FINL1_Android_High_MOS.mp4",
+                        "format": "stereo_left_right"
+                    },
+                    "name": "default",
+                    "android_cardboard": {
+                        "4k": {
+                            "size": "1.1 GB",
+                            "mono_use_eye": "left",
+                            "file": "VICEVR_V6_FINL1_Android_High_MOS.mp4",
+                            "format": "stereo_left_right"
+                        },
+                        "hd": {
+                            "size": "1.1 GB",
+                            "mono_use_eye": "left",
+                            "file": "VICEVR_V6_FINL1_Android_Low_MOS.mp4",
+                            "format": "stereo_left_right"
+                        }
+                    },
+                    "ios": {
+                        "ipad": {
+                            "size": "850 MB",
+                            "file": "VICEVR_V6_MILL_FINL_REV_CREDITS_V3.mov_h264_30fps_3840x2160_crf_23.mp4",
+                            "format": "mono_top_only"
+                        },
+                        "mono": {
+                            "size": "850 MB",
+                            "file": "VICEVR_V6_MILL_FINL_REV_CREDITS_V3.mov_h264_30fps_3840x2160_crf_23.mp4",
+                            "format": "mono_top_only"
+                        },
+                        "stereo": {
+                            "size": "850 MB",
+                            "file": "VICEVR_V6_MILL_FINL_REV_CREDITS_V3.mov_h264_30fps_3840x2160_crf_23.mp4",
+                            "format": "stereo_top_bottom"
+                        }
+                    },
+                    "audio_files": [
+                        "VICE_000.mp3",
+                        "VICE_090.mp3",
+                        "VICE_180.mp3",
+                        "VICE_270.mp3"
+                    ],
+                    "webplayer": {
+                        "name": "vice-v6",
+                        "audio_formats": {
+                            "none": true,
+                            "baked": true,
+                            "binaural": true
+                        },
+                        "format": "stereo_top_bottom",
+                        "resolutions": [
+                            "4k",
+                            "1080",
+                            "720",
+                            "480"
+                        ],
+                        "available_formats": {
+                            "mono": true,
+                            "stereo": true
+                        },
+                        "types": [
+                            "mp4",
+                            "webm"
+                        ]
+                    }
+                }
+            },
+            "visible_on": {
+                "webplayer": true,
+                "android_cardboard": true,
+                "ios": true,
+                "gearvr": true
+            },
+            "id": 31,
+            "splash": {},
+            "author": "Creators: Chris Milk + Spike Jonze",
+            "directors": ["Chris Milk", "Spike Jonze"],
+            "release_date": 2015,
+            "is_live_streaming": false,
+            "duration": "08:09",
+            "root": "31-VICE/",
+            "thumbnail": {
+                "android_cardboard": "vice_1024.jpg",
+                "ios": "vice_1024.jpg",
+                "gearvr": "vice_512.png"
+            },
+            "description": "The first ever Virtual Reality news broadcast covers the Millions March in New York City.  60,000 New Yorkers took to the streets and marched as one to call for an end to racial profiling by police.  Alice Speri reports from inside the protest."
+        },
+        "121": {
+            "update_mode": null,
+            "detail_images": [],
+            "coming_soon_on": {
+                "webplayer": false,
+                "android_cardboard": false,
+                "ios": false,
+                "gearvr": false
+            },
+            "title": "Waves of Grace",
+            "display_priority": 800,
+            "cameras": {
+                "default": {
+                    "audio_files":[
+                        "http://cdn1.vrse.com/121-LIBERIA/audio/LIBERIA_000.mp3",
+                         "http://cdn1.vrse.com/121-LIBERIA/audio/LIBERIA_090.mp3",
+                         "http://cdn1.vrse.com/121-LIBERIA/audio/LIBERIA_180.mp3",
+                         "http://cdn1.vrse.com/121-LIBERIA/audio/LIBERIA_270.mp3"
+                     ],
+                    "gearvr": {},
+                    "name": "default",
+                    "android_cardboard": {},
+                    "ios": {},
+                    "webplayer": {
+                        "name": "liberia-v16",
+                        "audio_formats": {
+                            "none": true,
+                            "baked": true,
+                            "binaural": true
+                        },
+                        "format": "stereo_top_bottom",
+                        "resolutions": [
+                            "4k",
+                            "1080",
+                            "720",
+                            "480"
+                        ],
+                        "available_formats": {
+                            "mono": true,
+                            "stereo": true
+                        },
+                        "types": [
+                            "mp4",
+                            "webm"
+                        ]
+                    }
+                }
+            },
+            "visible_on": {
+                "webplayer": true,
+                "android_cardboard": true,
+                "ios": true,
+                "gearvr": true
+            },
+            "id": 121,
+            "splash": {},
+            "author": "Creators: Gabo Arora & Chris Milk",
+            "directors": ["Gabo Arora", "Chris Milk"],
+            "release_date": 2015,
+            "is_live_streaming": false,
+            "duration": "09:54",
+            "root": "121-LIBERIA/",
+            "thumbnail": {},
+            "description": "Liberia has endured the largest Ebola outbreak in history. As communities rebuild, one woman seeks healing through faith. This is the story of Decontee Davis, an Ebola survivor who uses her immunity to care for orphaned children in her village."
+        }
+    },
+    "paths": {
+        "image": "images/",
+        "audio": "audio/",
+        "video": "video/"
+    },
+    "providers": {
+        "1": "http://cdn2.vrse.com",
+        "0": "http://cdn1.vrse.com",
+        "2": "http://media.vrse.com"
+    },
+    "onboard_id": "100",
+    "json_version": "1.99"
+}

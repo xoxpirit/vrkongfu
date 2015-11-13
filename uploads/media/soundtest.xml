@@ -1,0 +1,234 @@
+<krpano version="1.19" bgcolor="0x000000" idletime="2">
+
+	<!-- the videoplayer interface skin -->
+	<include url="skin/videointerface.xml" />
+
+	<security cors="use-credentials">
+		<allowdomain domain="192.168.1.10"/>
+		<allowdomain domain="oss-cn-beijing.aliyuncs.com"/>
+		<allowdomain domain="oss-cn-beijing.aliyuncs.com"/>
+	    <allowdomain domain="mm360movie.oss-cn-beijing.aliyuncs.com"/>
+	</security>	
+
+	<!-- include the videoplayer plugin and load the video (use a low res video for iOS) -->
+	<plugin name="video"
+	        url.flash="%SWFPATH%/plugins/videoplayer.swf"
+	        url.html5="%SWFPATH%/plugins/videoplayer.js"
+
+	        videourl.no-ios="rtmp://192.168.1.10:1935/live/"
+
+	        pausedonstart="false"
+	        loop="false"
+	        enabled="false"
+	        zorder="0"
+	        align="center" ox="0" oy="0"
+	        buffertime="0"
+
+
+	        width.no-panovideosupport="100%"
+	        
+
+	        onloaded="videointerface_setup_interface(get(name)); setup_video_controls();set(movie_id,0);main_hide_hotspots();"
+	        onvideoready="videointerface_videoready();set(time_reached,false);show_timer();"
+
+	        />
+	        
+
+    
+
+	<!-- custom control setup - add items for selecting videos with a different resolution/quality -->
+	<action name="setup_video_controls">
+		<!-- add  items to the control menu of the videointerface skin -->
+		videointerface_addmenuitem(configmenu, vqtitle, 'Select Video Quality', true, videointerface_toggle_configmenu() );
+		//videointerface_addmenuitem(configmenu, q1, '1024x512',  false, change_video_file(q1,'http://mm360movie.360looker.com/46.mp4'); );
+	//	videointerface_addmenuitem(configmenu, q2, '1920x960',  false, change_video_file(q2,'http://mm360movie.360looker.com/46.mp4'); );
+
+		<!-- select/mark the current video (see the initial videourl attribute) -->
+		if(device.ios,
+			videointerface_selectmenuitem(configmenu, q1);
+		  ,
+			videointerface_selectmenuitem(configmenu, q2);
+		  );
+	</action>
+
+
+	<!-- change the video file, but try keeping the same playback position -->
+	<action name="change_video_file">
+		plugin[video].playvideo('%CURRENTXML%/%2', null, get(plugin[video].ispaused), get(plugin[video].time));
+		videointerface_deselectmenuitem(configmenu, q1);
+		videointerface_deselectmenuitem(configmenu, q2);
+		videointerface_selectmenuitem(configmenu, %1);
+	</action>
+
+
+	<!-- the panoramic video image -->
+	<image devices="panovideosupport">
+		<sphere url="plugin:video" />
+	</image>
+
+
+	<!-- set the default view - a light fisheye projection -->
+	<view hlookat="0" vlookat="0" fovtype="DFOV" fov="130" fovmin="130" fovmax="130" />
+	
+<layer name="bt_back" url="http://360looker.com/test1016/back.png" width="50" height="50" align="lefttop" edge="center" x="50" y="50" zorder="2" onclick="back_click();" alpha="0.9" visible="false"/>
+<!--  image  -->
+<layer name="image_bf" url="" width="140" height="30" align="lefttop" edge="center" x="180" y="50" zorder="2"/>
+<layer name="image_bf2" url="" width="526" height="41" align="lefttop" edge="center" x="650" y="500" zorder="2"/>
+<!--   -->
+<!--  part waiguan.mp4  14-37  -->
+<hotspot name="ht_waiguan" keep="false" visible="true" enabled="true" handcursor="true" zorder="" capture="true" blendmode="normal" style="" alpha="0.0" autoalpha="false" fillcolor="0xFF0000" fillcolorhover="0x0000FF" fillalpha="0.3" fillalphahover="1" borderwidth="0.0" borderwidthhover="4.0" bordercolor="0xFF0000" bordercolorhover="0xFFFFFF" borderalpha="0.0" borderalphahover="0.8" fadeintime="0.15" fadeincurve="1.1" fadeouttime="0.3" fadeoutcurve="0.7" onover="" onhover="" onout="" onclick="click_waiguan();" ondown="" onup="">
+<point ath="124" atv="170"/>
+<point ath="130" atv="170"/>
+<point ath="130" atv="156.8"/>
+<point ath="125" atv="156"/>
+</hotspot>
+<!--  part kaimu.mp4  14-37  -->
+<hotspot name="ht_kaimu" keep="false" visible="true" enabled="true" handcursor="true" zorder="" capture="true" blendmode="normal" style="" alpha="0.0" autoalpha="false" fillcolor="0x0000FF" fillcolorhover="0x0000FF" fillalpha="0.3" fillalphahover="1" borderwidth="0.0" borderwidthhover="4.0" bordercolor="0xFF0000" bordercolorhover="0xFFFFFF" borderalpha="0.0" borderalphahover="0.8" fadeintime="0.15" fadeincurve="1.1" fadeouttime="0.3" fadeoutcurve="0.7" onover="" onhover="" onout="" onclick="click_kaimu();" ondown="" onup="">
+<point ath="180" atv="180"/>
+<point ath="200" atv="182"/>
+<point ath="200" atv="175"/>
+<point ath="180" atv="175"/>
+</hotspot>
+<!--  part bimu.mp4  -->
+<hotspot name="ht_bimu" keep="false" visible="true" enabled="true" handcursor="true" zorder="" capture="true" blendmode="normal" style="" alpha="0.0" autoalpha="false" fillcolor="0x99CC33" fillcolorhover="0x0000FF" fillalpha="0.3" fillalphahover="1" borderwidth="0.0" borderwidthhover="4.0" bordercolor="0xFF0000" bordercolorhover="0xFFFFFF" borderalpha="0.0" borderalphahover="0.8" fadeintime="0.15" fadeincurve="1.1" fadeouttime="0.3" fadeoutcurve="0.7" onover="" onhover="" onout="" onclick="click_bimu()" ondown="" onup="">
+<point ath="210" atv="190"/>
+<point ath="250" atv="192"/>
+<point ath="250" atv="170"/>
+<point ath="210" atv="168"/>
+</hotspot>
+<!--  part caipan.mp4  14-37  -->
+<hotspot name="ht_caipan" keep="false" visible="true" enabled="true" handcursor="true" zorder="" capture="true" blendmode="normal" style="" alpha="0.0" autoalpha="false" fillcolor="0x00FF00" fillcolorhover="0x0000FF" fillalpha="0.3" fillalphahover="1" borderwidth="0.0" borderwidthhover="4.0" bordercolor="0xFF0000" bordercolorhover="0xFFFFFF" borderalpha="0.0" borderalphahover="0.8" fadeintime="0.15" fadeincurve="1.1" fadeouttime="0.3" fadeoutcurve="0.7" onover="" onhover="" onout="" onclick="click_caipan();" ondown="" onup="">
+<point ath="110" atv="150"/>
+<point ath="132" atv="160"/>
+<point ath="140" atv="155"/>
+<point ath="128" atv="136.8"/>
+<point ath="110" atv="136"/>
+</hotspot>
+<!--  part nanshuang2.mp4  55-105  -->
+<hotspot name="ht_nanshuang2" keep="false" visible="true" enabled="true" handcursor="true" zorder="" capture="true" blendmode="normal" style="" alpha="0.0" autoalpha="false" fillcolor="0xCC3399" fillcolorhover="0x0000FF" fillalpha="0.3" fillalphahover="1" borderwidth="0.0" borderwidthhover="4.0" bordercolor="0xFF0000" bordercolorhover="0xFFFFFF" borderalpha="0.0" borderalphahover="0.8" fadeintime="0.15" fadeincurve="1.1" fadeouttime="0.3" fadeoutcurve="0.7" onover="" onhover="" onout="" onclick="click_nanshuang2();" ondown="" onup="">
+<point ath="123" atv="200"/>
+<point ath="150" atv="168"/>
+<point ath="160" atv="150"/>
+<point ath="100" atv="166"/>
+</hotspot>
+<!--  part nanshuang3.mp4  55-105  -->
+<hotspot name="ht_nanshuang3" keep="false" visible="true" enabled="true" handcursor="true" zorder="" capture="true" blendmode="normal" style="" alpha="0.0" autoalpha="false" fillcolor="0x336699" fillcolorhover="0x0000FF" fillalpha="0.3" fillalphahover="1" borderwidth="0.0" borderwidthhover="4.0" bordercolor="0xFF0000" bordercolorhover="0xFFFFFF" borderalpha="0.0" borderalphahover="0.8" fadeintime="0.15" fadeincurve="1.1" fadeouttime="0.3" fadeoutcurve="0.7" onover="" onhover="" onout="" onclick="click_nanshuang3();" ondown="" onup="">
+<point ath="180" atv="170"/>
+<point ath="210" atv="190"/>
+<point ath="235" atv="170"/>
+<point ath="220" atv="150"/>
+</hotspot>
+<!--  part hunshuang2.mp4  107-141  -->
+<hotspot name="ht_hunshuang2" keep="false" visible="true" enabled="true" handcursor="true" zorder="" capture="true" blendmode="normal" style="" alpha="0.0" autoalpha="false" fillcolor="0xFFFF00" fillcolorhover="0x0000FF" fillalpha="0.3" fillalphahover="1" borderwidth="0.0" borderwidthhover="4.0" bordercolor="0xFF0000" bordercolorhover="0xFFFFFF" borderalpha="0.0" borderalphahover="0.8" fadeintime="0.15" fadeincurve="1.1" fadeouttime="0.3" fadeoutcurve="0.7" onover="" onhover="" onout="" onclick="click_hunshuang2()" ondown="" onup="">
+<point ath="200" atv="190"/>
+<point ath="220" atv="195"/>
+<point ath="245" atv="176"/>
+<point ath="220" atv="160"/>
+</hotspot>
+<!--  part hunshuang3.mp4  107-141   -->
+<hotspot name="ht_hunshuang3" keep="false" visible="true" enabled="true" handcursor="true" zorder="" capture="true" blendmode="normal" style="" alpha="0.0" autoalpha="false" fillcolor="0xFF33CC" fillcolorhover="0x0000FF" fillalpha="0.3" fillalphahover="1" borderwidth="0.0" borderwidthhover="4.0" bordercolor="0xFF0000" bordercolorhover="0xFFFFFF" borderalpha="0.0" borderalphahover="0.8" fadeintime="0.15" fadeincurve="1.1" fadeouttime="0.3" fadeoutcurve="0.7" onover="" onhover="" onout="" onclick="click_hunshuang3()" ondown="" onup="">
+<point ath="158" atv="183"/>
+<point ath="176" atv="190"/>
+<point ath="174" atv="145"/>
+<point ath="150" atv="200"/>
+</hotspot>
+<!--  part nandan2.mp4  143-164   -->
+<hotspot name="ht_nandan2" keep="false" visible="true" enabled="true" handcursor="true" zorder="" capture="true" blendmode="normal" style="" alpha="0.0" autoalpha="false" fillcolor="0x0000FF" fillcolorhover="0x0000FF" fillalpha="0.3" fillalphahover="1" borderwidth="0.0" borderwidthhover="4.0" bordercolor="0xFF0000" bordercolorhover="0xFFFFFF" borderalpha="0.0" borderalphahover="0.8" fadeintime="0.15" fadeincurve="1.1" fadeouttime="0.3" fadeoutcurve="0.7" onover="" onhover="" onout="" onclick="click_nandan2()" ondown="" onup="">
+<point ath="225" atv="195"/>
+<point ath="235" atv="200"/>
+<point ath="255" atv="180"/>
+<point ath="235" atv="160"/>
+</hotspot>
+<!--
+ actions //////////////////////////////////////////////////// 
+-->
+<!--
+ onclick="togglepause();" custom control setup - add items for selecting videos with a different resolution/quality 
+-->
+<action name="setup_video_controls">
+<!--
+ add  items to the control menu of the videointerface skin 
+-->
+videointerface_addmenuitem(configmenu, vqtitle, 'Select Video Quality', true, videointerface_toggle_configmenu() ); videointerface_addmenuitem(configmenu, q1, '1024x512', false, change_video_file(q1, 'video-1024x512.mp4|video-1024x512.webm'); ); videointerface_addmenuitem(configmenu, q2, '1920x960', false, change_video_file(q2, 'video-1920x960.mp4|video-1920x960.webm'); );
+<!--
+ select/mark the current video (see the initial videourl attribute) 
+-->
+if(device.ios, videointerface_selectmenuitem(configmenu, q1); , videointerface_selectmenuitem(configmenu, q2); );
+</action>
+<action name="main_show_hotspots">
+main_hide_hotspots(); if(plugin[video].time GT 14 AND plugin[video].time LT 37, main_14()); if(plugin[video].time GT 54 AND plugin[video].time LT 105, main_54()); if(plugin[video].time GT 107 AND plugin[video].time LT 141, main_107()); if(plugin[video].time GT 143 AND plugin[video].time LT 164, main_144()); set(layer[bt_back].visible,false); set(layer[image_bf].visible,true); if(plugin[video].time LT 54, set(layer[image_bf].url,'')); if(plugin[video].time GT 54 AND plugin[video].time LT 60, set(layer[image_bf].url,'http://mm360test01.oss-cn-beijing.aliyuncs.com/res/mandouble_8_9.png')); if(plugin[video].time GT 60 AND plugin[video].time LT 84, set(layer[image_bf].url,'http://mm360test01.oss-cn-beijing.aliyuncs.com/res/mandouble_9_9.png')); if(plugin[video].time GT 84 AND plugin[video].time LT 105, set(layer[image_bf].url,'http://mm360test01.oss-cn-beijing.aliyuncs.com/res/mandouble_9_10.png')); if(plugin[video].time GT 105 AND plugin[video].time LT 124, set(layer[image_bf].url,'http://mm360test01.oss-cn-beijing.aliyuncs.com/res/hunshuang_18_19.png')); if(plugin[video].time GT 124 AND plugin[video].time LT 144, set(layer[image_bf].url,'http://mm360test01.oss-cn-beijing.aliyuncs.com/res/hunshuang_18_20.png')); if(plugin[video].time GT 144 AND plugin[video].time LT 160, set(layer[image_bf].url,'http://mm360test01.oss-cn-beijing.aliyuncs.com/res/mansingle_11_5.png')); if(plugin[video].time GT 160 AND plugin[video].time LT 200, set(layer[image_bf].url,'http://mm360test01.oss-cn-beijing.aliyuncs.com/res/mansingle_11_6.png')); set(layer[image_bf2].url,'');
+</action>
+<action name="main_hide_hotspots">
+set(hotspot[ht_waiguan].visible,false); set(hotspot[ht_kaimu].visible,false); set(hotspot[ht_caipan].visible,false); set(hotspot[ht_nanshuang2].visible,false); set(hotspot[ht_nanshuang3].visible,false); set(hotspot[ht_hunshuang2].visible,false); set(hotspot[ht_hunshuang3].visible,false); set(hotspot[ht_nandan2].visible,false); set(hotspot[ht_bimu].visible,false); set(layer[bt_back].visible,true); set(layer[image_bf].visible,false); if(movie_id == 107,hunshuang2_bifen()); if(movie_id == 108,hunshuang3_bifen()); if(movie_id == 144,nandan2_bifen()); if(movie_id == 2,set(layer[image_bf2].url,'')); if(movie_id == 14,set(layer[image_bf2].url,'')); if(movie_id == 53,set(layer[image_bf2].url,''));
+</action>
+<action name="hunshuang2_bifen">
+if(plugin[video].time GT 0 AND plugin[video].time LT 3, set(layer[image_bf2].url,'')); if(plugin[video].time GT 3 AND plugin[video].time LT 13, set(layer[image_bf2].url,'http://mm360test01.oss-cn-beijing.aliyuncs.com/res/bifen_6_1.png')); if(plugin[video].time GT 14 AND plugin[video].time LT 23, set(layer[image_bf2].url,'http://mm360test01.oss-cn-beijing.aliyuncs.com/res/bifen_7_1.png')); if(plugin[video].time GT 24 AND plugin[video].time LT 38, set(layer[image_bf2].url,'http://mm360test01.oss-cn-beijing.aliyuncs.com/res/bifen_7_2.png')); if(plugin[video].time GT 39 AND plugin[video].time LT 50, set(layer[image_bf2].url,'http://mm360test01.oss-cn-beijing.aliyuncs.com/res/bifen_8_2.png'));
+</action>
+<action name="hunshuang3_bifen">
+if(plugin[video].time GT 0 AND plugin[video].time LT 7, set(layer[image_bf2].url,'')); if(plugin[video].time GT 7 AND plugin[video].time LT 22, set(layer[image_bf2].url,'http://mm360test01.oss-cn-beijing.aliyuncs.com/res/bifen_8_14.png')); if(plugin[video].time GT 22 AND plugin[video].time LT 32, set(layer[image_bf2].url,'http://mm360test01.oss-cn-beijing.aliyuncs.com/res/bifen_8_15.png')); if(plugin[video].time GT 32 AND plugin[video].time LT 100, set(layer[image_bf2].url,'http://mm360test01.oss-cn-beijing.aliyuncs.com/res/bifen_9_15.png'));
+</action>
+<action name="nandan2_bifen">
+if(plugin[video].time GT 0 AND plugin[video].time LT 11, set(layer[image_bf2].url,'')); if(plugin[video].time GT 11 AND plugin[video].time LT 29, set(layer[image_bf2].url,'http://mm360test01.oss-cn-beijing.aliyuncs.com/res/bifen_18_7.png')); if(plugin[video].time GT 29 AND plugin[video].time LT 32, set(layer[image_bf2].url,'http://mm360test01.oss-cn-beijing.aliyuncs.com/res/bifen_19_7.png'));
+</action>
+<action name="main_14">
+set(hotspot[ht_waiguan].visible,true); set(hotspot[ht_kaimu].visible,true); set(hotspot[ht_caipan].visible,true); set(hotspot[ht_bimu].visible,true);
+</action>
+<action name="main_54">
+set(hotspot[ht_nanshuang2].visible,true); set(hotspot[ht_nanshuang3].visible,true);
+</action>
+<action name="main_107">
+set(hotspot[ht_hunshuang2].visible,true); set(hotspot[ht_hunshuang3].visible,true);
+</action>
+<action name="main_144">set(hotspot[ht_nandan2].visible,true);</action>
+<action name="show_timer">
+if(movie_id == 0,main_show_hotspots(),main_hide_hotspots()); delayedcall(1.0, show_timer() );
+</action>
+<!--  hotspot event  -->
+<action name="click_kaimu">
+set(movie_id,14); plugin[video].playvideo("http://mm360test01.oss-cn-beijing.aliyuncs.com/res/kaimu.mp4", null, false, 0)
+</action>
+<action name="click_waiguan">
+set(movie_id,14); plugin[video].playvideo("http://mm360test01.oss-cn-beijing.aliyuncs.com/res/waiguan.mp4", null, false, 0)
+</action>
+<action name="click_caipan">
+set(movie_id,14); plugin[video].playvideo("http://mm360test01.oss-cn-beijing.aliyuncs.com/res/caipan.mp4", null, false, 0)
+</action>
+<action name="click_nanshuang2">
+set(movie_id,54); plugin[video].playvideo("http://mm360test01.oss-cn-beijing.aliyuncs.com/res/nanshuang2.mp4", null, false, 0)
+</action>
+<action name="click_nanshuang3">
+set(movie_id,54); plugin[video].playvideo("http://mm360test01.oss-cn-beijing.aliyuncs.com/res/nanshuang3.mp4", null, false, 0)
+</action>
+<action name="click_hunshuang2">
+set(movie_id,107); plugin[video].playvideo("http://mm360test01.oss-cn-beijing.aliyuncs.com/res/hunshuang2.mp4", null, false, 0)
+</action>
+<action name="click_hunshuang3">
+set(movie_id,108); plugin[video].playvideo("http://mm360test01.oss-cn-beijing.aliyuncs.com/res/hunshuang3.mp4", null, false, 0)
+</action>
+<action name="click_nandan2">
+set(movie_id,144); plugin[video].playvideo("http://mm360test01.oss-cn-beijing.aliyuncs.com/res/nandan2.mp4", null, false, 0)
+</action>
+<action name="click_bimu">
+set(movie_id,14); plugin[video].playvideo("http://mm360test01.oss-cn-beijing.aliyuncs.com/res/bimu.mp4", null, false, 0)
+</action>
+<action name="back_click">
+if(movie_id == 14,plugin[video].playvideo("http://mm360test01.oss-cn-beijing.aliyuncs.com/res/main.mp4", null, false, 14)); if(movie_id == 54,plugin[video].playvideo("http://mm360test01.oss-cn-beijing.aliyuncs.com/res/main.mp4", null, false, 54)); if(movie_id == 107,plugin[video].playvideo("http://mm360test01.oss-cn-beijing.aliyuncs.com/res/main.mp4", null, false, 107)); if(movie_id == 108,plugin[video].playvideo("http://mm360test01.oss-cn-beijing.aliyuncs.com/res/main.mp4", null, false, 107)); if(movie_id == 144,plugin[video].playvideo("http://mm360test01.oss-cn-beijing.aliyuncs.com/res/main.mp4", null, false, 144)); set(movie_id,0);
+</action>
+<!--
+ change the video file, but try keeping the same playback position 
+-->
+<action name="change_video_file">
+set(hotspot[videospot].visible,false);
+<!--
+plugin[video].playvideo("video-1024x512.mp4", null, get(plugin[video].ispaused), get(plugin[video].time));
+-->
+plugin[video].playvideo("video-1024x512.mp4", null, false, 0)); videointerface_deselectmenuitem(configmenu, q1); videointerface_deselectmenuitem(configmenu, q2); videointerface_selectmenuitem(configmenu, %1);
+</action>
+<!--
+ end of actions //////////////////////////////////////////////////// 
+-->
+
+
+<textstyle name="infostyle" origin="center" edge="center" yoffset="-39" textalign="center" background="false" border="false" fontsize="40" textcolor="0xFFFFFF" bold="false" effect="glow(0xFFFFFF,0.7,4,2);glow(0x000000,1,4,2);dropshadow(3,45,0x000000,2,0.6);" showtime="3.0" fadeintime="1.0" fadetime="1.0"/>
+
+</krpano>

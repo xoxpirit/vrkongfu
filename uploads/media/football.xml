@@ -1,0 +1,173 @@
+<krpano version="1.18" bgcolor="0x000000">
+<!--
+ define 
+		movie_id = 0 //header.mp4
+		movie_id = 1 //other....mp4
+		
+-->
+<!--  the videoplayer interface skin  -->
+<include url="skin/videointerface-live.xml"/>
+<include url="%SWFPATH%/plugins/showtext.xml"/>
+
+<security cors="use-credentials">
+	<allowdomain domain="aliyuncs.com"/>
+	<allowdomain domain="oss-cn-beijing.aliyuncs.com"/>
+	<allowdomain domain="oss-cn-beijing.aliyuncs.com"/>
+	<allowdomain domain="mm360movie.oss-cn-beijing.aliyuncs.com"/>
+</security>
+
+	<action name="videointerface_mobile_stagescale" autorun="preinit" devices="mobile">
+		mul(stagescale, 2.0);
+	</action>
+	
+<!--
+ include the videoplayer plugin and load the video (use a low res video for iOS) 
+-->
+<plugin name="video" url.flash="%SWFPATH%/plugins/videoplayer.swf" url.html5="%SWFPATH%/plugins/videoplayer.js" posterurl.ios="" videourl.ios="" posterurl="logo.png" posterurl.no-ios="logo.png" videourl.no-ios="" pausedonstart="true" loop="false" enabled="true" zorder="0" align="center" ox="0" oy="0" width.no-panovideosupport="100%" height.no-panovideosupport="prop" buffertime="0.1" onloaded="videointerface_setup_interface(get(name)); setup_video_controls();set(movie_id,0);set(screen_type,0);" onvideoready="videointerface_videoready();set(time_reached,false);update_progress();" onvideocomplete=""/>
+<!--
+ elements ////////////////////////////////////////////////////
+-->
+<layer name="bt_switch" url="http://www.360looker.com/football/res/logo_supercn.png" align="rightbottom" edge="rightbottom" width="160" height="80" x="80" y="80" zorder="2" onclick="switch_screen();" alpha="0.9" visible="true"/>
+<!--  lefttop logo-VRKONGFU  -->
+<layer name="layer_logo" url="http://www.360looker.com/football/res/logo_kongfu.png" align="lefttop" edge="lefttop" width="62.5" height="39" x="30" y="30" zorder="2" alpha="0.9" visible="false" enabled="false"/>
+<layer name="bt_camera1" url="http://www.360looker.com/football/res/camera01.png" align="leftbottom" edge="left" x="10" y="80" zorder="2" visible="false" enabled="true" width="50" height="50" scale="0.8" onclick="camera1_click();"/>
+<layer name="bt_camera2" url="http://www.360looker.com/football/res/camera02.png" align="leftbottom" edge="left" x="50" y="80" zorder="2" visible="false" enabled="true" width="50" height="50" scale="0.8" onclick="camera2_click();"/>
+<layer name="bt_camera3" url="http://www.360looker.com/football/res/camera03.png" align="leftbottom" edge="left" x="90" y="80" zorder="2" visible="false" enabled="true" width="50" height="50" scale="0.8" onclick="camera3_click();"/>
+<layer name="bt_camera4" url="http://www.360looker.com/football/res/camera04.png" align="leftbottom" edge="left" x="130" y="80" zorder="2" visible="false" enabled="true" width="50" height="50" scale="0.8" onclick="camera4_click();"/>
+<layer name="bt_camera5" url="http://www.360looker.com/football/res/camera05.png" align="leftbottom" edge="left" x="170" y="80" zorder="2" visible="false" enabled="true" width="50" height="50" scale="0.8" onclick="camera5_click();"/>
+<layer name="bt_camera6" url="http://www.360looker.com/football/res/camera06.png" align="leftbottom" edge="left" x="210" y="80" zorder="2" visible="false" enabled="true" width="50" height="50" scale="0.8" onclick="camera6_click();"/>
+<layer name="bt_popleft" url="http://www.360looker.com/football/res/point_right.png" align="left" edge="left" x="20" zorder="2" visible="false" enabled="true" width="40" height="50" scale="0.5"  onclick="popleft_click();"/>
+<layer name="bt_popleft_close" url="http://www.360looker.com/football/res/point_right_close.png" align="left" edge="left" x="20" zorder="2" visible="false" enabled="true" width="40" height="50" scale="0.5" onclick="popleft_close_click();"/>
+<layer name="bt_poptop" url="http://www.360looker.com/football/res/point_top.png" align="bottom" edge="bottom" y="60" zorder="2" visible="false" enabled="true" width="50" height="40" onclick="poptop_click();"/>
+<layer name="bt_poptop_close" url="http://www.360looker.com/football/res/point_top_close.png" align="bottom" edge="bottom" y="60" zorder="2" visible="false" enabled="true" width="50" height="40" onclick="poptop_close_click();"/>
+<layer name="layer_player_left" url="http://www.360looker.com/football/res/player_left.png" align="left" edge="left" x="-1000" zorder="2" visible="false" enabled="false" width="80%" height="prop" onclick=""/>
+<layer name="layer_player_right" url="http://www.360looker.com/football/res/player_right.png" align="right" edge="right" x="-1000" zorder="2" visible="false" enabled="false" width="80%" height="prop" onclick=""/>
+<layer name="player1" url="http://www.360looker.com/football/res/a.png" align="left" edge="left" x="250" y="-140" zorder="2" visible="false" enabled="true" width="80" height="120" onclick="show_player_info();"/>
+<layer name="player2" url="http://www.360looker.com/football/res/a.png" align="left" edge="left" x="370" y="-140" zorder="2" visible="false" enabled="true" width="80" height="120" onclick="show_player_info();"/>
+<layer name="player3" url="http://www.360looker.com/football/res/a.png" align="left" edge="left" x="200" y="20" zorder="2" visible="false" enabled="true" width="80" height="120" onclick="show_player_info();"/>
+<layer name="player4" url="http://www.360looker.com/football/res/a.png" align="left" edge="left" x="320" y="20" zorder="2" visible="false" enabled="true" width="80" height="120" onclick="show_player_info();"/>
+<layer name="player5" url="http://www.360looker.com/football/res/a.png" align="left" edge="left" x="440" y="20" zorder="2" visible="false" enabled="true" width="80" height="120" onclick="show_player_info();"/>
+<layer name="player6" url="http://www.360looker.com/football/res/a.png" align="left" edge="left" x="200" y="180" zorder="2" visible="false" enabled="true" width="80" height="120" onclick="show_player_info();"/>
+<layer name="player7" url="http://www.360looker.com/football/res/a.png" align="left" edge="left" x="320" y="180" zorder="2" visible="false" enabled="true" width="80" height="120" onclick="show_player_info();"/>
+<layer name="player8" url="http://www.360looker.com/football/res/a.png" align="left" edge="left" x="440" y="180" zorder="2" visible="false" enabled="true" width="80" height="120" onclick="show_player_info();"/>
+<layer name="player11" url="http://www.360looker.com/football/res/a.png" align="right" edge="right" x="250" y="-140" zorder="2" visible="false" enabled="true" width="80" height="120" onclick="show_player_info();"/>
+<layer name="player12" url="http://www.360looker.com/football/res/a.png" align="right" edge="right" x="370" y="-140" zorder="2" visible="false" enabled="true" width="80" height="120" onclick="show_player_info();"/>
+<layer name="player13" url="http://www.360looker.com/football/res/a.png" align="right" edge="right" x="200" y="20" zorder="2" visible="false" enabled="true" width="80" height="120" onclick="show_player_info();"/>
+<layer name="player14" url="http://www.360looker.com/football/res/a.png" align="right" edge="right" x="320" y="20" zorder="2" visible="false" enabled="true" width="80" height="120" onclick="show_player_info();"/>
+<layer name="player15" url="http://www.360looker.com/football/res/a.png" align="right" edge="right" x="440" y="20" zorder="2" visible="false" enabled="true" width="80" height="120" onclick="show_player_info();"/>
+<layer name="player16" url="http://www.360looker.com/football/res/a.png" align="right" edge="right" x="200" y="180" zorder="2" visible="false" enabled="true" width="80" height="120" onclick="show_player_info();"/>
+<layer name="player17" url="http://www.360looker.com/football/res/a.png" align="right" edge="right" x="320" y="180" zorder="2" visible="false" enabled="true" width="80" height="120" onclick="show_player_info();"/>
+<layer name="player18" url="http://www.360looker.com/football/res/a.png" align="right" edge="right" x="440" y="180" zorder="2" visible="false" enabled="true" width="80" height="120" onclick="show_player_info();"/>
+<layer name="bt_cam1" url="http://www.360looker.com/football/res/a.png" align="centerbottom" edge="centerbottom" x="0" y="460" zorder="2" visible="false" enabled="true" width="50" height="50" onclick="camera1_click();"/>
+<layer name="bt_cam2" url="http://www.360looker.com/football/res/a.png" align="centerbottom" edge="centerbottom" x="-150" y="290" zorder="2" visible="false" enabled="true" width="50" height="50" onclick="camera2_click();"/>
+<layer name="bt_cam3" url="http://www.360looker.com/football/res/a.png" align="centerbottom" edge="centerbottom" x="150" y="290" zorder="2" visible="false" enabled="true" width="50" height="50" onclick="camera3_click();"/>
+<layer name="bt_cam4" url="http://www.360looker.com/football/res/a.png" align="centerbottom" edge="centerbottom" x="-140" y="170" zorder="2" visible="false" enabled="true" width="50" height="50" onclick="camera4_click();"/>
+<layer name="bt_cam5" url="http://www.360looker.com/football/res/a.png" align="centerbottom" edge="centerbottom" x="0" y="170" zorder="2" visible="false" enabled="true" width="50" height="50" onclick="camera5_click();"/>
+<layer name="bt_cam6" url="http://www.360looker.com/football/res/a.png" align="centerbottom" edge="centerbottom" x="0" y="100" zorder="2" visible="false" enabled="true" width="50" height="50" onclick="camera6_click();"/>
+<layer name="layer_bifen" url="http://www.360looker.com/football/res/bifen_00.png" align="righttop" edge="right" x="80" y="60" zorder="2" visible="false" enabled="false" width="prop" height="5%"/>
+<!--
+ actions //////////////////////////////////////////////////// 
+-->
+<!--  timer showtext(get(plugin[video].time),infostyle); -->
+<action name="update_progress">
+set(str,''); div(min,get(plugin[video].time),60); mod(sec,get(plugin[video].time),60); Math.floor(min,min); roundval(sec); txtadd(str,get(min)); txtadd(str," : "); txtadd(str,get(sec)); showtext(get(str),infostyle); if(plugin[video].time GT 29 AND plugin[video].time LT 31 ,show_red()); if(plugin[video].time GT 59 AND plugin[video].time LT 61 ,show_yellow()); if(plugin[video].time GT 89 AND plugin[video].time LT 91 ,show_bigpoint()); if(plugin[video].time GT 119 AND plugin[video].time LT 121 ,show_percent()); if(plugin[video].time LT 90 AND my_bifen == 1, set(layer[layer_bifen].url,http://www.360looker.com/football/res/bifen_00.png)); if(plugin[video].time GT 90 AND my_bifen == 0, set(layer[layer_bifen].url,http://www.360looker.com/football/res/bifen_10.png)); if(plugin[video].time GT 90,set(my_bifen,1),set(my_bifen,0)); delayedcall(1.0, update_progress());
+</action>
+<action name="show_red">
+addlayer(layer_red); set(layer[layer_red].url,"http://www.360looker.com/football/res/red.gif"); set(layer[layer_red].align,"centerbottom"); set(layer[layer_red].edge,"bottom"); set(layer[layer_red].y,"60"); set(layer[layer_red].width,"prop"); set(layer[layer_red].height,"50%"); set(layer[layer_red].zorder,"2"); set(layer[layer_red].alpha,"0.7"); set(layer[layer_red].visible,"true"); set(layer[layer_red].enabled,"false"); delayedcall(8.0,removelayer(layer_red));
+</action>
+<action name="show_yellow">
+addlayer(layer_yellow); set(layer[layer_yellow].url,"http://www.360looker.com/football/res/yellow.gif"); set(layer[layer_yellow].align,"centerbottom"); set(layer[layer_yellow].edge,"bottom"); set(layer[layer_yellow].y,"60"); set(layer[layer_yellow].width,"prop"); set(layer[layer_yellow].height,"50%"); set(layer[layer_yellow].zorder,"2"); set(layer[layer_yellow].alpha,"0.7"); set(layer[layer_yellow].visible,"true"); set(layer[layer_yellow].enabled,"false"); delayedcall(8.0,removelayer(layer_yellow));
+</action>
+<action name="show_bigpoint">
+addlayer(layer_bigpoint); set(layer[layer_bigpoint].url,"http://www.360looker.com/football/res/bigpoint.gif"); set(layer[layer_bigpoint].align,"centerbottom"); set(layer[layer_bigpoint].edge,"bottom"); set(layer[layer_bigpoint].y,"60"); set(layer[layer_bigpoint].width,"prop"); set(layer[layer_bigpoint].height,"100%"); set(layer[layer_bigpoint].zorder,"2"); set(layer[layer_bigpoint].alpha,"0.7"); set(layer[layer_bigpoint].visible,"true"); set(layer[layer_bigpoint].enabled,"false"); delayedcall(8.0,removelayer(layer_bigpoint)); delayedcall(8.0,show_getin());
+</action>
+<action name="show_getin">
+addlayer(layer_getin); set(layer[layer_getin].url,"http://www.360looker.com/football/res/getin.gif"); set(layer[layer_getin].align,"centerbottom"); set(layer[layer_getin].edge,"bottom"); set(layer[layer_getin].y,"60"); set(layer[layer_getin].width,"prop"); set(layer[layer_getin].height,"50%"); set(layer[layer_getin].zorder,"2"); set(layer[layer_getin].alpha,"0.7"); set(layer[layer_getin].visible,"true"); set(layer[layer_getin].enabled,"false"); delayedcall(8.0,removelayer(layer_getin));
+</action>
+<action name="show_percent">
+addlayer(layer_percent); set(layer[layer_percent].url,"http://www.360looker.com/football/res/percent.gif"); set(layer[layer_percent].align,"centerbottom"); set(layer[layer_percent].edge,"bottom"); set(layer[layer_percent].y,"60"); set(layer[layer_percent].width,"prop"); set(layer[layer_percent].height,"100%"); set(layer[layer_percent].zorder,"2"); set(layer[layer_percent].alpha,"0.7"); set(layer[layer_percent].visible,"true"); set(layer[layer_percent].enabled,"false"); delayedcall(8.0,removelayer(layer_percent));
+</action>
+<action name="show_player_info">
+popleft_close_click(); addlayer(player_info); set(layer[player_info].url,"http://www.360looker.com/football/res/player_info.png"); set(layer[player_info].align,"centerbottom"); set(layer[player_info].edge,"bottom"); set(layer[player_info].y,"60"); set(layer[player_info].width,"prop"); set(layer[player_info].height,"100%"); set(layer[player_info].zorder,"2"); set(layer[player_info].alpha,"0.7"); set(layer[player_info].visible,"true"); set(layer[player_info].enabled,"true"); set(layer[player_info].onclick,"close_player_info");
+</action>
+<action name="close_player_info">removelayer(player_info); popleft_click();</action>
+<!--
+ Switch pano2flat or flat2pano  videointerface_flat_view()
+			if(screen_type==0,videointerface_flat_view(),videointerface_fisheye_view());
+		if(screen_type==0,set(screen_type,1),set(screen_type,0));
+	
+-->
+<action name="switch_screen">
+videointerface_flat_view(); if(movie_id==7,,plugin[video].playvideo("http://www.360looker.com/football/res/football_a1.mp4", null, false, get(plugin[video].time))); set(movie_id,7);
+</action>
+<action name="header_finish">removehotspot(videospot); letsgo();</action>
+<!--  funs when panoVideo start  -->
+<action name="letsgo">
+set(movie_id,1); set(my_video_time,0.0); set(my_bifen,0); set(layer[layer_logo].visible,true); set(layer[bt_camera1].visible,true); set(layer[bt_camera2].visible,true); set(layer[bt_camera3].visible,true); set(layer[bt_camera4].visible,true); set(layer[bt_camera5].visible,true); set(layer[bt_camera6].visible,true); set(layer[bt_popleft].visible,true); set(layer[bt_poptop].visible,true); set(layer[layer_bifen].visible,true); plugin[video].playvideo("http://www.360looker.com/football/res/football_1.mp4", null, false, 0));
+</action>
+<action name="camera1_click">
+videointerface_fisheye_view(); if(movie_id==1,,plugin[video].playvideo("http://www.360looker.com/football/res/football_1.mp4", null, false, get(plugin[video].time))); set(movie_id,1);
+</action>
+<action name="camera2_click">
+videointerface_fisheye_view(); if(movie_id==2,,plugin[video].playvideo("http://www.360looker.com/football/res/football_2.mp4", null, false, get(plugin[video].time))); set(movie_id,2);
+</action>
+<action name="camera3_click">
+videointerface_fisheye_view(); if(movie_id==3,,plugin[video].playvideo("http://www.360looker.com/football/res/football_3.mp4", null, false, get(plugin[video].time))); set(movie_id,3);
+</action>
+<action name="camera4_click">
+videointerface_fisheye_view(); if(movie_id==4,,plugin[video].playvideo("http://www.360looker.com/football/res/football_4.mp4", null, false, get(plugin[video].time))); set(movie_id,4);
+</action>
+<action name="camera5_click">
+videointerface_fisheye_view(); if(movie_id==5,,plugin[video].playvideo("http://www.360looker.com/football/res/football_5.mp4", null, false, get(plugin[video].time))); set(movie_id,5);
+</action>
+<action name="camera6_click">
+videointerface_fisheye_view(); if(movie_id==6,,plugin[video].playvideo("http://www.360looker.com/football/res/football_6.mp4", null, false, get(plugin[video].time))); set(movie_id,6);
+</action>
+<action name="popleft_click">
+set(layer[bt_popleft].visible,false); set(layer[bt_popleft_close].visible,true); set(layer[layer_player_left].visible,true); set(layer[layer_player_right].visible,true); tween(layer[layer_player_left].x,"20"); tween(layer[layer_player_right].x,"20"); if(layer[bt_poptop_close].visible == true,poptop_close_click()); set(layer[player1].visible,true); set(layer[player2].visible,true); set(layer[player3].visible,true); set(layer[player4].visible,true); set(layer[player5].visible,true); set(layer[player6].visible,true); set(layer[player7].visible,true); set(layer[player8].visible,true); set(layer[player11].visible,true); set(layer[player12].visible,true); set(layer[player13].visible,true); set(layer[player14].visible,true); set(layer[player15].visible,true); set(layer[player16].visible,true); set(layer[player17].visible,true); set(layer[player18].visible,true);
+</action>
+<action name="popleft_close_click">
+set(layer[bt_popleft].visible,true); set(layer[bt_popleft_close].visible,false); tween(layer[layer_player_left].visible,false); tween(layer[layer_player_right].visible,false); tween(layer[layer_player_left].x,-1000); tween(layer[layer_player_right].x,-1000); set(layer[player1].visible,false); set(layer[player2].visible,false); set(layer[player3].visible,false); set(layer[player4].visible,false); set(layer[player5].visible,false); set(layer[player6].visible,false); set(layer[player7].visible,false); set(layer[player8].visible,false); set(layer[player11].visible,false); set(layer[player12].visible,false); set(layer[player13].visible,false); set(layer[player14].visible,false); set(layer[player15].visible,false); set(layer[player16].visible,false); set(layer[player17].visible,false); set(layer[player18].visible,false);
+</action>
+<!--
+ 	<layer name="bt_playground_gif" url="http://www.360looker.com/football/res/playground.gif" align="centerbottom" edge="bottom"   y="80" width="80%" height="prop"
+                    zorder="2"  alpha="0.7" visible="false" enabled="false"/> 
+-->
+<action name="poptop_click">
+set(layer[bt_poptop].visible,false); set(layer[bt_poptop_close].visible,true); addlayer(bt_playground_gif); set(layer[bt_playground_gif].url,"http://www.360looker.com/football/res/playground.gif"); set(layer[bt_playground_gif].align,"centerbottom"); set(layer[bt_playground_gif].edge,"bottom"); set(layer[bt_playground_gif].y,"90"); set(layer[bt_playground_gif].width,"80%"); set(layer[bt_playground_gif].height,"prop"); set(layer[bt_playground_gif].zorder,"2"); set(layer[bt_playground_gif].alpha,"0.7"); set(layer[bt_playground_gif].visible,"true"); set(layer[bt_playground_gif].enabled,"false"); if(layer[bt_popleft_close].visible == true,popleft_close_click()); set(layer[bt_cam1].visible,true); set(layer[bt_cam2].visible,true); set(layer[bt_cam3].visible,true); set(layer[bt_cam4].visible,true); set(layer[bt_cam5].visible,true); set(layer[bt_cam6].visible,true);
+</action>
+<action name="poptop_close_click">
+removelayer(bt_playground_gif); set(layer[bt_poptop].visible,true); set(layer[bt_poptop_close].visible,false); set(layer[bt_cam1].visible,false); set(layer[bt_cam2].visible,false); set(layer[bt_cam3].visible,false); set(layer[bt_cam4].visible,false); set(layer[bt_cam5].visible,false); set(layer[bt_cam6].visible,false);
+</action>
+<!-- togglepause();  -->
+<hotspot name="videospot" url="%SWFPATH%/plugins/videoplayer.swf" alturl="%SWFPATH%/plugins/videoplayer.js" videourl="http://www.360looker.com/football/res/football_0.mp4" posterurl="" distorted="true" ath="0" atv="0" edge="center" scale="1.0" rx="0" ry="0" rz="0" loop="false" pausedonstart="false" directionalsound="true" range="200" volume="0.7" onclick="header_finish();" onvideocomplete="header_finish();"/>
+<!--
+ onclick="togglepause();" custom control setup - add items for selecting videos with a different resolution/quality 
+-->
+<action name="setup_video_controls">
+<!--
+ add  items to the control menu of the videointerface skin 
+-->
+videointerface_addmenuitem(configmenu, vqtitle, 'Select Video Quality', true, videointerface_toggle_configmenu() ); videointerface_addmenuitem(configmenu, q1, '1024x512', false, change_video_file(q1, 'video-1024x512.mp4|video-1024x512.webm'); ); videointerface_addmenuitem(configmenu, q2, '1920x960', false, change_video_file(q2, 'video-1920x960.mp4|video-1920x960.webm'); );
+<!--
+ select/mark the current video (see the initial videourl attribute) 
+-->
+if(device.ios, videointerface_selectmenuitem(configmenu, q1); , videointerface_selectmenuitem(configmenu, q2); );
+</action>
+<!--
+ end of actions //////////////////////////////////////////////////// 
+-->
+<!--  the panoramic video image  -->
+<image devices="panovideosupport">
+<sphere url="plugin:video"/>
+</image>
+
+	<!-- set the default view - a light fisheye projection -->
+	<view hlookat="0" vlookat="0" fovtype="DFOV" fov="130" fovmin="130" fovmax="130" />
+
+	<textstyle name="infostyle"
+	           origin="topright" edge="right" yoffset="73" xoffset="-150" textalign="center" background="false" border="false"
+	           fontsize="15" textcolor="0xFFFFFF" bold="false" 
+	           showtime="3.0" 
+	           />
+</krpano>

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+
+	<title>一个人的万圣节 | VR功夫</title>
+	
+	<!-- Bootstrap -->
+	<link href="./styles/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="./styles/buttons.css">
+	
+	<link rel="stylesheet" type="text/css" href="./styles/transition.css">
+	<link rel="stylesheet" type="text/css" href="./styles/main.css">
+	
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+	  <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	  <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+	<![endif]-->
+
+<script type="text/javascript">
+//判断访问终端
+var browser={
+    versions:function(){
+        var u = navigator.userAgent, app = navigator.appVersion;
+        return {
+            trident: u.indexOf('Trident') > -1, //IE内核
+            presto: u.indexOf('Presto') > -1, //opera内核
+            webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+            gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1,//火狐内核
+            mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+            ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+            android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
+            iPhone: u.indexOf('iPhone') > -1 , //是否为iPhone或者QQHD浏览器
+            iPad: u.indexOf('iPad') > -1, //是否iPad
+            webApp: u.indexOf('Safari') == -1, //是否web应该程序，没有头部与底部
+            weixin: u.indexOf('MicroMessenger') > -1, //是否微信 （2015-01-22新增）
+            qq: u.match(/\sQQ/i) == " qq" //是否QQ
+        };
+    }(),
+    language:(navigator.browserLanguage || navigator.language).toLowerCase()
+}
+</script>
+
+
+			
+
+</head>
+
+<body>
+
+	<div class="navbar-white">
+	    <!-- Fixed navbar -->
+	    <div class="navbar navbar-default" role="navigation">
+	      	<div class="container">
+		        <div class="navbar-header">
+		          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false" aria-controls="navbar">
+		            <span class="sr-only">Toggle navigation</span>
+		            <span class="icon-bar top-bar"></span>
+		            <span class="icon-bar middle-bar"></span>
+		            <span class="icon-bar bottom-bar"></span>
+		          </button>
+		          <a class="navbar-brand" href="index.html"><img src="./images/logo.png"/></a>
+		        </div>
+			               
+			    <div class="navbar-collapse collapse navbar-right">
+		          <ul class="nav navbar-nav">
+		            <li><a href="capture.html">解决方案</a></li>
+		            <li><a href="news.html">新闻</a></li>
+		            <li><a href="contact.html">联系我们</a></li>
+		          </ul>
+		        </div><!--/.nav-collapse -->
+		    </div>
+	    </div>
+	</div>
+    
+    <div style="background-color:black;">
+		<div>
+			<script src="./viewer/embedpano.js"></script>
+			<div id="pano" style="width:100%;height:510px;z-index:99">
+			<noscript><table style="width:100%;height:510px;"><tr style="vertical-align:middle;"><td><div style="text-align:center;">ERROR:<br/><br/>Javascript not activated<br/><br/></div></td></tr></table></noscript>
+			<script>
+					embedpano({swf:"./viewer/krpano.swf", xml:"http://360looker.com/halloweenpc/video.xml", target:"pano", flash:"prefer", passQueryParameters:true, mwheel:false});
+				</script>
+			</div>
+		</div>	
+	</div>
+	
+
+    <div style="background-color:#F3F0F0;padding:50px 0;">  
+		<div class="container" style="background-color:#FFFFFF;padding-top: 25px;">
+			<div class="col-lg-8">
+				<h3>2015全国羽毛球业余俱乐部赛（长沙站）</h3>
+				<p style="color:gray;font-size:12px;">2015年9月12日 发布</p>
+				<p>2015年全国羽毛球业余俱乐部赛今年将在全国共举行18场比赛，足迹遍布大江南北，12月将在海南陵水进行全国总决赛。</p>
+			</div>
+
+			<div class="col-lg-4">
+				<p>分享
+				<img alt="" src="./images/wechat.png"/>
+				<img alt="" src="./images/qq space.png"/>
+				<img alt="" src="./images/weibo.png"/>
+				</p>
+	
+				<p>在手机上观看可以获得更好的体验<br>
+				<img alt="" src="./images/ios.png"/>
+				<img alt="" src="./images/android.png"/>
+				</p>
+			</div>
+
+		</div>
+    </div>
+      
+
+	<div id="films" style="background-image:url(./images/case-bg.png);">
+		<div class="container">
+ 			<div class="row centered">
+		 		<h1>其他案例</h1> 
+
+			<ul class="gallery" >
+
+				<li><a href="/watch/index.html?id=6"><div
+							class="thumbnail lock-aspect preload" aspect-ratio="1310:690"
+							preload-href="/images/projects/evol-v158.jpg"
+							style="height: 225px; background-image: url(./images/v2.png);">
+														<div style="color:white;font-famliy:STHeitiSC-Light;font-size:36px;padding-top:100px;">发射中心</div>
+							<div style="color:white;font-famliy:STHeitiSC-Light;font-size:14px;padding-top:20px;">5:10</div>
+						</div>
+						<!-- <p class="date">May 31, 2015</p> --></a></li>
+				<li><a href="/watch/index.html?id=71"><div
+							class="thumbnail lock-aspect preload" aspect-ratio="1310:690"
+							preload-href="/images/projects/snl-v2.jpg"
+							style="height: 225px; background-image: url(./images/v3.png);">
+														<div style="color:white;font-famliy:STHeitiSC-Light;font-size:36px;padding-top:100px;">花样校园</div>
+							<div style="color:white;font-famliy:STHeitiSC-Light;font-size:14px;padding-top:20px;">2:10</div>
+						</div>
+
+						<!-- <p class="date">May 31, 2015</p> --></a></li>
+
+			<br class="clear">
+			</ul>
+ 			</div>
+		</div>
+		</div>
+
+
+	<!-- *****************************************************************************************************************
+	 FOOTER SECTION
+	 ***************************************************************************************************************** --> 
+	 
+	<div id="footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6" style="float:left;font-size:14px;padding:15px;color:#9c9c9c;text-align:left;padding-top: 10px;">	
+					Copyright 2015 子午天地<img src="./images/zwtd-logo.png" style="margin-left:10px;margin-bottom:0px;"/>
+				</div>
+				<div class="col-lg-6" style="float:right;text-align: right;">
+					<a id="toggle-wechat" style="cursor: pointer;"><img src="images/wechat.png"></a>
+					<div id="wechat-id" style="position: absolute;right:20px;bottom: 50px;width: 180px;height: 220px;background-color: white;border: 1px solid rgba(180, 180, 180, 0.5);padding:20px;">
+						<p><img src="http://mp.weixin.qq.com/mp/qrcode?scene=10000004&size=102&__biz=MzIzNzAyNDgxMA=="></p>
+						<p style="font-size:12px;color:#9c9c9c;">扫一扫，关注微信公众号</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="./third-party/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    
+    <script src="js/npm.js"></script>
+    
+    <div class="scripts">
+
+      <script src="./third-party/underscore.js"></script>
+      <script src="./third-party/transition.js"></script>
+      <script src="./src/email-obfuscation.js"></script>
+      <script src="./src/main.js"></script>
+      <script src="./src/index.js"></script>
+      
+    </div>
+    <!-- 隐藏头部插件 -->
+    <script  type="text/javascript"  src="js/headroom.js"></script>  
+    <script  type="text/javascript"  src="js/jQuery.headroom.js"></script>  
+    <script type="text/javascript">  
+  
+            $(".navbar-fixed-top").headroom({
+			  "tolerance": 5,
+			  "offset": 100,
+			  "classes": {
+			    "initial": "headroom",
+			    "pinned": "headroom--pinned",
+			    "unpinned": "headroom--unpinned"
+			  }
+			});  
+  
+    </script>
+     
+    <script type="text/javascript">
+	    $('#wechat-id').hide();
+		    $('#toggle-wechat').click(function() {
+		 $('#wechat-id').toggle(100, 'swing', function() {
+		 // Animation complete.
+		 });
+		});
+  </script>
+  
+  	<script type="text/javascript">
+	        //平台、设备和操作系统
+	        var system = {
+	            win: false,
+	            mac: false,
+	            xll: false,
+	            ipad:false
+	        };
+	        //检测平台
+	        var p = navigator.platform;
+	        system.win = p.indexOf("Win") == 0;
+	        system.mac = p.indexOf("Mac") == 0;
+	        system.x11 = (p == "X11") || (p.indexOf("Linux") == 0);
+	        system.ipad = (navigator.userAgent.match(/iPad/i) != null)?true:false;
+	        //跳转语句，如果是手机访问就自动跳转到wap.baidu.com页面
+	        function jump360video() {
+		         if (system.win || system.mac || system.xll) {
+				 	window.location.href = "video.html";
+		        } else {
+		            window.location.href = "http://www.360looker.com/football/";
+		        }
+	        }
+	        
+	        $(function(){  
+		         if (system.win || system.mac || system.xll) {
+
+
+		        } else {
+						window.location.href = "http://www.360looker.com/halloween512/";
+		        }		        
+		        
+			}); 
+			
+			
+	</script>
+  
+</body>
+
+</html>

@@ -1,0 +1,99 @@
+<krpano version="1.18" bgcolor="0x000000" idletime="2">
+
+	<!-- the videoplayer interface skin -->
+	<include url="skin/videointerface.xml" />
+
+	<security cors="use-credentials">
+		<allowdomain domain="aliyuncs.com"/>
+		<allowdomain domain="oss-cn-beijing.aliyuncs.com"/>
+		<allowdomain domain="oss-cn-beijing.aliyuncs.com"/>
+	  <allowdomain domain="mm360movie.oss-cn-beijing.aliyuncs.com"/>
+	</security>	
+
+	<!-- include the videoplayer plugin and load the video (use a low res video for iOS) -->
+	<plugin name="video"
+	        url.flash="%SWFPATH%/plugins/videoplayer.swf"
+	        url.html5="%SWFPATH%/plugins/videoplayer.js"
+
+	        posterurl.ios="http://mm360test01.oss-cn-beijing.aliyuncs.com/logo.png"
+	        videourl.ios="http://mm360movie.oss-cn-beijing.aliyuncs.com/halloween/wsj1024.mp4"
+	        
+	        posterurl="http://mm360test01.oss-cn-beijing.aliyuncs.com/logo.png"
+					
+	        posterurl.no-ios="http://mm360test01.oss-cn-beijing.aliyuncs.com/logo.png"
+	        videourl.no-ios="http://360looker.com/halloweenpc/wsj1024.mp4"
+
+	        pausedonstart="true"
+	        loop="false"
+	        enabled="false"
+	        zorder="0"
+	        align="center" ox="0" oy="0"
+
+
+	        width.no-panovideosupport="100%"
+	        height.no-panovideosupport="prop"
+
+	        onloaded="videointerface_setup_interface(get(name)); setup_video_controls();"
+	        onvideoready="videointerface_videoready();"
+
+	        />
+	        
+			<plugin name="soundinterface"
+			        url="%SWFPATH%/plugins/soundinterface.swf"
+			        alturl="%SWFPATH%/plugins/soundinterface.js"
+			        preload="true"
+			        rootpath=""
+			        volume="1.0"
+			        mute="false"
+		    />
+    
+
+	<!-- custom control setup - add items for selecting videos with a different resolution/quality -->
+	<action name="setup_video_controls">
+		<!-- add  items to the control menu of the videointerface skin -->
+		videointerface_addmenuitem(configmenu, vqtitle, 'Select Video Quality', true, videointerface_toggle_configmenu() );
+		//videointerface_addmenuitem(configmenu, q1, '1024x512',  false, change_video_file(q1,'http://mm360movie.360looker.com/46.mp4'); );
+	//	videointerface_addmenuitem(configmenu, q2, '1920x960',  false, change_video_file(q2,'http://mm360movie.360looker.com/46.mp4'); );
+
+		<!-- select/mark the current video (see the initial videourl attribute) -->
+		if(device.ios,
+			videointerface_selectmenuitem(configmenu, q1);
+		  ,
+			videointerface_selectmenuitem(configmenu, q2);
+		  );
+	</action>
+
+
+	<!-- change the video file, but try keeping the same playback position -->
+	<action name="change_video_file">
+		plugin[video].playvideo('%CURRENTXML%/%2', null, get(plugin[video].ispaused), get(plugin[video].time));
+		videointerface_deselectmenuitem(configmenu, q1);
+		videointerface_deselectmenuitem(configmenu, q2);
+		videointerface_selectmenuitem(configmenu, %1);
+	</action>
+
+
+	<!-- the panoramic video image -->
+	<image devices="panovideosupport">
+		<sphere url="plugin:video" />
+	</image>
+
+
+	<!-- set the default view - a light fisheye projection -->
+	<view hlookat="0" vlookat="0" fovtype="DFOV" fov="130" fovmin="130" fovmax="130" />
+
+	<!--
+	 change the video file, but try keeping the same playback position 
+	-->
+	<action name="change_video_file">
+		set(hotspot[videospot].visible,false);
+		<!--
+		plugin[video].playvideo("video-1024x512.mp4", null, get(plugin[video].ispaused), get(plugin[video].time));
+		-->
+		plugin[video].playvideo("video-1024x512.mp4", null, false, 0)); videointerface_deselectmenuitem(configmenu, q1); videointerface_deselectmenuitem(configmenu, q2); videointerface_selectmenuitem(configmenu, %1);
+	</action>
+	<!--
+	 end of actions //////////////////////////////////////////////////// 
+	-->
+
+</krpano>

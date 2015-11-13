@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+
+	<title>虚拟游览 | 解决方案</title>
+	
+	<!-- Bootstrap -->
+	<link href="./styles/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="./styles/buttons.css">
+	
+	<link rel="stylesheet" type="text/css" href="./styles/transition.css">
+	<link rel="stylesheet" type="text/css" href="./styles/main.css">
+	
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+	  <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	  <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+	<![endif]-->
+
+</head>
+
+<body>
+
+	<div class="navbar-white navbar-fixed-top">
+	    <!-- Fixed navbar -->
+	    <div class="navbar navbar-default" role="navigation">
+	      	<div class="container">
+		        <div class="navbar-header">
+		          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false" aria-controls="navbar">
+		            <span class="sr-only">Toggle navigation</span>
+		            <span class="icon-bar top-bar"></span>
+		            <span class="icon-bar middle-bar"></span>
+		            <span class="icon-bar bottom-bar"></span>
+		          </button>
+		          <a class="navbar-brand" href="index.html"><img src="./images/logo.png"/></a>
+		        </div>
+			               
+			    <div class="navbar-collapse collapse navbar-right">
+		          <ul class="nav navbar-nav">
+		            <li class="dropdown">
+		              <a href="#" class="dropdown-toggle" data-toggle="dropdown">解决方案<b class="caret"></b></a>
+		              <ul class="dropdown-menu">
+		                <li><a href="platform.html">总览</a></li>
+		                <li><a href="capture.html">采集</a></li>
+		                <li><a href="production.html">制作</a></li>
+		                <li><a href="distribution.html">分发</a></li>
+		                <li><a href="watching.html">观看</a></li>
+		              </ul>
+		            </li>
+		            <li><a href="news.html">新闻</a></li>
+		            <li><a href="contact.html">联系我们</a></li>
+		          </ul>
+		        </div><!--/.nav-collapse -->
+		    </div>
+	    </div>
+	</div>
+
+	<div class="top-area" style="background-color: #1FBAD6; color: #fff; margin-top: 80px;">
+		<div class="container centered" style="padding: 50px 0;">
+			<h2>虚拟游览</h2>
+			<p style="color: #fff;">我们的平台可以通过影像的形式记录与还原现场，游览者可以有身临其境的体验。</p>
+		</div>	
+	</div>
+	    
+	<div class="top-area" style="background:url('images/mapping-bg.jpg') fixed center center; height: 500px;background-size: cover;">
+	</div>
+		
+		<div class="container" style="color: #8d8d8d;">
+			<div style="margin-top: 125px; margin-bottom: 100px;padding: 0 10px;">
+				<div style="margin:0 auto;max-width: 680px;">
+					<h3>直播中的地图</h3>
+					<p>通过全景图像采集设备，为街景提供全新的360˚观赏、直播体验。</p><br>	
+					<h3>虚拟漫游</h3>
+					<p>在旅游景区、博物馆等地方部署全景设备，让游客在智能终端进行虚拟漫游。</p>
+				</div>
+			</div><!-- /row -->
+		</div> <!-- /container -->	
+	     
+
+	<!-- *****************************************************************************************************************
+	 FOOTER SECTION
+	 ***************************************************************************************************************** --> 
+	 
+	<div id="footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6" style="float:left;font-size:14px;padding:15px;color:#9c9c9c;text-align:left;padding-top: 10px;">	
+					Copyright 2015 子午天地<img src="./images/zwtd-logo.png" style="margin-left:10px;margin-bottom:0px;"/>
+				</div>
+				<div class="col-lg-6" style="float:right;text-align: right;">
+					<a id="toggle-wechat" style="cursor: pointer;"><img src="images/wechat.png"></a>
+					<div id="wechat-id" style="position: absolute;right:20px;bottom: 50px;width: 180px;height: 220px;background-color: white;border: 1px solid rgba(180, 180, 180, 0.5);padding:20px;">
+						<p><img src="http://mp.weixin.qq.com/mp/qrcode?scene=10000004&size=102&__biz=MzIzNzAyNDgxMA=="></p>
+						<p style="font-size:12px;color:#9c9c9c;">扫一扫，关注微信公众号</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="./third-party/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    
+    <script src="js/npm.js"></script>
+    
+    <div class="scripts">
+
+      <script src="./third-party/underscore.js"></script>
+      <script src="./third-party/transition.js"></script>
+      <script src="./src/email-obfuscation.js"></script>
+      <script src="./src/main.js"></script>
+      <script src="./src/index.js"></script>
+      
+    </div>
+    <!-- 隐藏头部插件 -->
+    <script  type="text/javascript"  src="js/headroom.js"></script>  
+    <script  type="text/javascript"  src="js/jQuery.headroom.js"></script>  
+    <script type="text/javascript">  
+  
+            $(".navbar-fixed-top").headroom({
+			  "tolerance": 5,
+			  "offset": 100,
+			  "classes": {
+			    "initial": "headroom",
+			    "pinned": "headroom--pinned",
+			    "unpinned": "headroom--unpinned"
+			  }
+			});  
+  
+    </script>
+     
+    <script type="text/javascript">
+	    $('#wechat-id').hide();
+		    $('#toggle-wechat').click(function() {
+		 $('#wechat-id').toggle(100, 'swing', function() {
+		 // Animation complete.
+		 });
+		});
+  </script>
+  
+</body>
+
+</html>
