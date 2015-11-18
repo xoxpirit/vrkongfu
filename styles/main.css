@@ -358,11 +358,13 @@ a:focus {
 	font-size: 9.5px;
 	text-transform: uppercase;
 	color: #fff; }
+
+.header-back.one {
+    background: url('../images/pic-large.jpg') 50% 0 no-repeat;
+}
        	
 #solutions {
       position: relative;
-      margin-top:50px;
-      margin-bottom: 50px;
       text-align: center;
       opacity: 1;
       -webkit-transition: opacity 0.35s cubic-bezier(0.785, 0.135, 0.15, 0.86);
@@ -371,6 +373,7 @@ a:focus {
       background-position: center center;
       background-size: cover; 
 }
+
 
 .img-responsive {
 	margin: 0 auto;
@@ -392,8 +395,7 @@ a:focus {
 	padding: 10px 0;
 	color: #8d8d8d; 
 }
-
-
+		
 #broadcast {
 	color:#FFF;
 }
@@ -403,19 +405,42 @@ a:focus {
 	text-align: center;
 	background: #101421;
 	color: #fff; 
-	padding-top: 80px;
-	padding-bottom: 100px;
-}
-        
-.film {
-	display: inline-block;
-	margin-bottom: 50px;
-	vertical-align: top; 
+	padding：50px 0;
 }
 
-.film div.thumbnail {
+#films .gallery {
+    position: relative;
+    list-style: none;
+    max-width: 900px;
+    margin: 0 auto 50px;
+    text-align: center;
+}
+
+#films .gallery li {
+    display: inline-block;
+    width: 49%;
+    margin:0;
+    padding:0;
+    margin-bottom: 50px;
+    vertical-align: top;
+}
+
+#films .gallery p {
+	font-size: 85%;
+    color: #fff;
+}
+
+#films .gallery li a {
+    position: relative;
+    display: block;
+    margin: 0 25px;
+    text-decoration: none;
+}
+    
+
+#films .gallery li div.thumbnail {
 	position: relative;
-	width: 350px;
+	width: 100%;
 	margin:0 auto 12.5px;
 	background-size: cover;
 	background-color: transparent;
@@ -423,7 +448,7 @@ a:focus {
 	border-radius:0px; 
 }
 
-.film div.thumbnail div.duration {
+#films .gallery li div.thumbnail div.duration {
   color: #fff;
   position: absolute;
   left: 0;
@@ -433,7 +458,7 @@ a:focus {
   padding: 4.75px 19px;
   font-size: 12.54px; }
   
-.film div.thumbnail:after {
+#films .gallery li div.thumbnail:after {
   position: absolute;
   display: block;
   top: 0;
@@ -450,16 +475,16 @@ a:focus {
   transition: opacity 0.75s cubic-bezier(0.075, 0.82, 0.165, 1); 
 }
   
-.film p {
+#films .gallery li p {
 text-align: left;
 text-decoration: none; }
 
-.film p.title {
+#films .gallery li p.title {
 font-size: 85%;
 color: #fff;
 text-transform: capitalize; }
 
-.film p.date {
+#films .gallery li p.date {
 color: #9a979b;
 font-style: italic;
 font-weight: 300; }

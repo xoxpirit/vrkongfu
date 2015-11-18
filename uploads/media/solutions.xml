@@ -1,0 +1,210 @@
+<krpano version="1.19" bgcolor="0x000000">
+	
+	<include url="%SWFPATH%/plugins/showtext.xml" />
+
+	<!-- use a grid preview pano as background -->
+<!-- 	<preview type="grid(cube,64,64,512,0xF6F6F6,0xF6F6F6,0xF6F6F6);" /> -->
+	
+	<image hfov="360" vfov="180" voffset="0">
+		<sphere url="solutions/bg.png" />
+	</image>
+
+
+	<plugin name="gyro" devices="html5" url="%SWFPATH%/plugins/gyro.js" enabled="true" camroll="false" friction="0" velastic="0" touch_mode="full"
+	onavailable="ifnot(device.desktop,set(control.usercontrol, off));"/>
+
+	<!-- view settings -->
+
+<!--
+	<view hlookat="0" vlookat="0" fov="100" fovmin="100" fovmax="100.0" maxpixelzoom="2.00" 
+      limitfov="false" stereographic="true" 
+      limitview="fullrange" hlookatmin="-180.0" hlookatmax="180.0" vlookatmin="0" vlookatmax="0" 
+      />
+-->
+
+	<view hlookat="-50" vlookat="0" fov="80" fovmin="10" fovmax="100.0" />
+	
+	<control mousetype="drag2d" keycodesin="" keycodesout="" touchzoom="false" touchfriction="0"/>
+	
+	
+	<layer name="infotext" url="%SWFPATH%/plugins/textfield.swf"
+	       background="false" border="false" enabled="false"
+	       html="沉浸式交互媒体的一站式解决方案"
+	       css="text-align:center; color:#000000; font-family:arial, sans-serif; font-size:24px; font-weight:normal;"
+	       align="top" y="50" height="24" vcenter="true"
+	       />
+		       
+<!--
+	<hotspot name="s1"
+	         url="solutions/1s-capture.png"
+	         distorted="true"
+	         ath="-65"
+	         atv="0"
+	         scale="0.4"
+	         rx="0" ry="0" rz="0"
+	         backup_rx="0"
+	         backup_ry="0"
+	         backup_rz="0"
+	         backup_scale="0"
+	         flying="0.0"
+	         enabled="false"
+	         />
+	<hotspot name="n1"
+	         url="solutions/n1.png"
+	         distorted="true"
+	         ath="-65"
+	         atv="18"
+	         scale="0.8"
+	         rx="" ry="0" rz="0"
+	         backup_rx="0"
+	         backup_ry="0"
+	         backup_rz="0"
+	         backup_scale="0"
+	         flying="0.0"
+	         enabled="false"
+	         />	         
+	<hotspot name="s2"
+	         url="solutions/2s-production.png"
+	         distorted="true"
+	         ath="-25"
+	         atv="0"
+	         scale="0.55"
+	         rx="0" ry="0" rz="0"
+	         backup_rx="0"
+	         backup_ry="0"
+	         backup_rz="0"
+	         backup_scale="0"
+	         flying="0.0"
+	         enabled="false"
+	         />
+	<hotspot name="n2"
+	         url="solutions/n2.png"
+	         distorted="true"
+	         ath="-25"
+	         atv="25"
+	         scale="1.1"
+	         rx="" ry="0" rz="0"
+	         backup_rx="0"
+	         backup_ry="0"
+	         backup_rz="0"
+	         backup_scale="0"
+	         flying="0.0"
+	         enabled="false"
+	         />	         
+	<hotspot name="s3"
+	         url="solutions/3s-distribution.png"
+	         distorted="true"
+	         ath="25"
+	         atv="0"
+	         scale="0.55"
+	         rx="0" ry="0" rz="0"
+	         backup_rx="0"
+	         backup_ry="0"
+	         backup_rz="0"
+	         backup_scale="0"
+	         flying="0.0"
+	         enabled="false"
+	         />	
+	<hotspot name="n3"
+	         url="solutions/n3.png"
+	         distorted="true"
+	         ath="25"
+	         atv="25"
+	         scale="1.1"
+	         rx="0" ry="0" rz="0"
+	         backup_rx="0"
+	         backup_ry="0"
+	         backup_rz="0"
+	         backup_scale="0"
+	         flying="0.0"
+	         enabled="false"
+	         />	 	                  	
+	<hotspot name="s4"
+	         url="solutions/4s-watching.png"
+	         distorted="true"
+	         ath="65"
+	         atv="0"
+	         scale="0.4"
+	         rx="0" ry="0" rz="0"
+	         backup_rx="0"
+	         backup_ry="0"
+	         backup_rz="0"
+	         backup_scale="0"
+	         flying="0.0"
+	         enabled="false"
+	         />	
+	<hotspot name="n4"
+	         url="solutions/n4.png"
+	         distorted="true"
+	         ath="65"
+	         atv="18"
+	         scale="0.8"
+	         rx="0" ry="0" rz="0"
+	         backup_rx="0"
+	         backup_ry="0"
+	         backup_rz="0"
+	         backup_scale="0"
+	         flying="0.0"
+	         enabled="false"
+	         />	
+-->
+<!--
+	<hotspot name="line"
+	         url="solutions/line.png"
+	         distorted="true"
+	         ath="0"
+	         atv="30"
+	         scale="1"
+	         rx="0" ry="0" rz="0"
+	         backup_rx="0"
+	         backup_ry="0"
+	         backup_rz="0"
+	         backup_scale="0"
+	         flying="0.0"
+	         enabled="false"
+	         />	
+-->
+	         
+	<!--
+		flyout/flyback actions
+		(for more stylish in/out moves play with different tweentypes and times)
+	-->
+
+	<action name="flyout">
+		<!--
+			save/backup the current rotation values!
+			NOTE - it is important that the backup_* variables are predefined!
+			this allows to save the variables at <hotspot> scope,
+			if the variables where not predefined, they were saved at global scope
+			and this would be a problem when more hotspots were used!
+		-->
+		copy(backup_rx,rx);
+		copy(backup_ry,ry);
+		copy(backup_rz,rz);
+		copy(backup_scale,scale);
+
+		<!-- tween the rotations values to 0 for a flat screen view -->
+		tween(rx, 0);
+		tween(ry, 0);
+		tween(rz, 0);
+		tween(scale, 3);
+
+		<!--
+			tween 'flying' to 1.0,
+			this makes the hotspot independent from the panorama rotation and scaling
+		-->
+		tween(flying, 1.0);
+	</action>
+
+	<action name="flyback">
+		<!-- tween back to the stored backup values -->
+		tween(rx, get(backup_rx));
+		tween(ry, get(backup_ry));
+		tween(rz, get(backup_rz));
+		tween(scale, get(backup_scale));
+
+		<!-- tween 'flying' back to 0.0 -->
+		tween(flying, 0.0);
+	</action>
+	
+</krpano>
